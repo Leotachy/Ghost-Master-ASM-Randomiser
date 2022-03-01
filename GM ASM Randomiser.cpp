@@ -24,7 +24,6 @@ void GetRandomScenarioOrder             (bool PreventImpSaves, int ScenarioIndex
 
 void GetSpecialHaunters                 (int* HasManifestPowerBaseKitArray, unsigned seed, int HaunterCount, int* SpecialHaunters, int* HaunterIDArray, string* HaunterFetterFlagStringArray, int* RemainingRestlessSpiritsIDArray);
 void SubtractActGifts                   (int* StockHaunterAndActGiftIDArray, int* StockHaunterArray, int ActGiftCount, int StockHaunterCount);
-int GetStockHaunterCount                (int HaunterCount, string* StockHaunterArray);
 int GetCountOfOtherHauntersAndSubtractRestlessSpirits   (int HaunterCount, int* HaunterIDArray, int* RestlessSpiritIDArray, int* StockHaunterAndActGiftIDArray);
 
 int GetDialogueHashesAndCountASM        (string ModsPath, string DialogueHash_arr[]);
@@ -65,7 +64,7 @@ int main()
 {
     string app_version = "v1.0";
     //This should be the process name!
-    std::cout << "Ghost Master Mod Randomiser " << app_version << " by Leotachy" << endl;
+    std::cout << "Ghost Master Mod Randomiser " << app_version << " by Leotachy " << endl;
     std::cout << endl << endl << endl << endl << endl;
 
     bool RandomiserParameters[10];
@@ -241,7 +240,7 @@ int main()
 
     delete[] SpeechName;
 
-    
+    system("PAUSE");
 
     return 0;
 }
@@ -1408,20 +1407,7 @@ void SubtractActGifts(int* StockHaunterAndActGiftIDArray, int* StockHaunterArray
     }
 }
 
-int GetStockHaunterCount(int HaunterCount, string* StockHaunterArray)
-{
-    int StockHaunterCount = 0;
 
-    for (int i = 0; i < HaunterCount; i++)
-    {
-        if (StockHaunterArray[i] == "dd 00000001")
-        {
-            StockHaunterCount++;
-        }
-    }
-
-    return StockHaunterCount;
-}
 
 int GetCountOfOtherHauntersAndSubtractRestlessSpirits(int HaunterCount, int* HaunterIDArray, int* RestlessSpiritIDArray, int* StockHaunterAndActGiftIDArray)
 {
