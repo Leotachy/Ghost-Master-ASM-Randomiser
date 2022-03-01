@@ -65,7 +65,7 @@ int main()
 {
     string app_version = "v1.0";
     //This should be the process name!
-    std::cout << "Ghost Master Randomiser " << app_version << " by Leotachy" << endl;
+    std::cout << "Ghost Master Mod Randomiser " << app_version << " by Leotachy" << endl;
     std::cout << endl << endl << endl << endl << endl;
 
     bool RandomiserParameters[10];
