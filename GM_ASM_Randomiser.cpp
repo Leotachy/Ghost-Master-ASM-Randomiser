@@ -105,13 +105,29 @@ int main()
 
 
 
-
-    srand((unsigned int)time(NULL));
-    unsigned seed = rand();
+    unsigned seed = 0;
+    
 
 
     if (RandScOrd || RandHaunters)
     {
+        string stringSeed;
+
+        cout << "Set a custom seed (Leave blank for random): ";
+        getline(cin, stringSeed);
+        cout << endl;
+
+        if (stringSeed == "")
+        {
+            srand((unsigned int)time(NULL));
+            unsigned seed = rand();
+
+        }
+        else
+        {
+            unsigned seed = stoi(stringSeed);
+        }
+
 
         string ModsPath = GetValidModsPath(RandHaunters);
         int HaunterCount = GetHaunterData(ModsPath, HaunterScriptInstanceArray, HaunterEnumArray, StockHaunterArray, HasManifestPowerBaseKitArray, HaunterIDArray, HaunterFetterFlagStringArray);
@@ -314,6 +330,7 @@ string GetValidModsPath(bool RandHaunters)
         if (error)
         {
             cout << "Example: C:\\Ghost Master\\GhostData\\Mods\\CompleteEdition2copy\\ " << endl;
+            cout << endl;
         }
 
         retry:
