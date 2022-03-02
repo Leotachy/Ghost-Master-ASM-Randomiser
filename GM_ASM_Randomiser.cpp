@@ -428,7 +428,7 @@ int GetHaunterData(string ModsPath, string* HaunterScriptInstanceArray, string* 
             for (int xd = 0; xd < 10; xd++)
             {
                 getline(HaunterData, uselessLine);
-                if (uselessLine == "dd 0000003E" || uselessLine == "dd 00000040" || uselessLine == "dd 00000042")
+                if (uselessLine == "dd 0000003E" || uselessLine == "dd 00000040")
                 {
                     HaunterHasManifestPower = true;
                 }
@@ -2109,16 +2109,16 @@ void RandScenario_WeirdSeance(string ModsPath, string app_version, string* Haunt
     OutputASM << "push ghostSI1" << endl;
 
     OutputASM << "00550231: " << endl;
-    OutputASM << "push " << HaunterEnumArray[(RemainingRestlessSpiritIDArray[2])] << endl;
-    OutputASM << endl;
-    OutputASM << "00550298: " << endl;
-    OutputASM << "push ghostSI2" << endl;
-
-    OutputASM << "00554521: " << endl;
     OutputASM << "push " << HaunterEnumArray[(RemainingRestlessSpiritIDArray[3])] << endl;
     OutputASM << endl;
-    OutputASM << "0055462C: " << endl;
+    OutputASM << "00550298: " << endl;
     OutputASM << "push ghostSI3" << endl;
+
+    OutputASM << "00554521: " << endl;
+    OutputASM << "push " << HaunterEnumArray[(RemainingRestlessSpiritIDArray[2])] << endl;
+    OutputASM << endl;
+    OutputASM << "0055462C: " << endl;
+    OutputASM << "push ghostSI2" << endl;
 
 
 
