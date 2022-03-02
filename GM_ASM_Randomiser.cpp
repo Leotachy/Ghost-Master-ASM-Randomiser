@@ -147,7 +147,7 @@ int main()
             RandScenario_Spooky         (ModsPath, app_version, HaunterEnumArray, HaunterScriptInstanceArray, RemainingRestlessSpiritIDArray, SpecialHaunters);
             RandScenario_Cuckoos        (ModsPath, app_version, HaunterEnumArray, HaunterScriptInstanceArray, RemainingRestlessSpiritIDArray);
 
-            std::cout << "Restless Spirits have been randomised successfully!" << endl;
+            
         
 
         
@@ -171,6 +171,7 @@ int main()
             OutputStockHaunters(ModsPath, "HaunterData.asm", StockHaunterIDArray, StockHaunterCount);
             DeleteAndRename(ModsPath, "HaunterData.asm");
 
+            std::cout << "Haunters have been randomised successfully!" << endl;
         }
 
         if (DialogueFix)
@@ -185,13 +186,10 @@ int main()
             if (RandomDialogue)
             {
                 RandomiseHaunterDialogue(DialogueHash_arr, DialogueCount, vdDialogueHash_arr, vdDialogueCount, seed);
-            }
-            int GhostDialogueHashCount = OutputSoundSubtitles(ModsPath, DialogueHash_arr, DialogueCount);
-            if (RandomDialogue)
-            {
                 OutputNarratorSpeechHashes(ModsPath, SpeechName, app_version);
                 cout << "Dialogue has been randomised successfully!" << endl;
             }
+            int GhostDialogueHashCount = OutputSoundSubtitles(ModsPath, DialogueHash_arr, DialogueCount);
             if (DeleteAndRename(ModsPath, "SoundSubtitles.asm"))
             {
                 cout << "Haunter speech related softlocks have been fixed successfully!" << endl;
