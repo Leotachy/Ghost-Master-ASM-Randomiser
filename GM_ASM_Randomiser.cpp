@@ -117,15 +117,15 @@ int main()
         getline(cin, stringSeed);
         cout << endl;
 
-        if (stringSeed == "")
+        if (stringSeed.empty())
         {
             srand((unsigned int)time(NULL));
-            unsigned seed = rand();
+            seed = rand();
 
         }
         else
         {
-            unsigned seed = stoi(stringSeed);
+            seed = stoi(stringSeed);
         }
 
 
